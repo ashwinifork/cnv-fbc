@@ -318,6 +318,9 @@ spec:
     - brew.registry.redhat.io/container-native-virtualization/virt-operator-rhel9
     source: registry.redhat.io/container-native-virtualization/virt-operator-rhel9
   - mirrors:
+    - brew.registry.redhat.io/container-native-virtualization/virt-synchronization-controller-rhel9
+    source: registry.redhat.io/container-native-virtualization/virt-synchronization-controller-rhel9
+  - mirrors:
     - brew.registry.redhat.io/container-native-virtualization/vm-console-proxy-rhel9
     source: registry.redhat.io/container-native-virtualization/vm-console-proxy-rhel9
   - mirrors:
