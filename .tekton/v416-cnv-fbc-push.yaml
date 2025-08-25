@@ -8,14 +8,14 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "stage" && ( "v4.16/***".pathChanged() || ".tekton/v4-16-stage-push.yaml".pathChanged()
+      == "stage" && ( "v4.16/***".pathChanged() || ".tekton/v416-cnv-fbc-push.yaml".pathChanged()
       )
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: cnv-fbc-stage
-    appstudio.openshift.io/component: v4-16-stage
+    appstudio.openshift.io/application: cnv-fbc-v4-16
+    appstudio.openshift.io/component: v416-cnv-fbc
     pipelines.appstudio.openshift.io/type: build
-  name: v4-16-stage-on-push
+  name: v416-cnv-fbc-on-push
   namespace: cnv-fbc-tenant
 spec:
   params:
@@ -35,7 +35,7 @@ spec:
   pipelineRef:
     name: fbc-pipeline
   taskRunTemplate:
-    serviceAccountName: build-pipeline-v4-16-stage
+    serviceAccountName: build-pipeline-v416-cnv-fbc
   workspaces:
   - name: git-auth
     secret:
