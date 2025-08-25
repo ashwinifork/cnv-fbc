@@ -4,19 +4,18 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift-cnv/cnv-fbc?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
-    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
-    pipelinesascode.tekton.dev/cancel-in-progress: "true"
+    pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && ( "v4.15/***".pathChanged() || ".tekton/v415-cnv-fbc-gnu1-pull-request.yaml".pathChanged()
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "stage" && ( "v4.12/***".pathChanged() || ".tekton/v4-12-stage-push.yaml".pathChanged()
       )
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: cnv-fbc-v4-15
-    appstudio.openshift.io/component: v415-cnv-fbc-gnu1
+    appstudio.openshift.io/application: cnv-fbc-stage
+    appstudio.openshift.io/component: v4-12-stage
     pipelines.appstudio.openshift.io/type: build
-  name: v415-cnv-fbc-gnu1-on-pull-request
+  name: v4-12-stage-on-push
   namespace: cnv-fbc-tenant
 spec:
   params:
@@ -25,20 +24,18 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/cnv-fbc-tenant/cnv-fbc-v4-15/v415-cnv-fbc-gnu1:on-pr-{{revision}}
-  - name: image-expires-after
-    value: 5d
+    value: quay.io/redhat-user-workloads/cnv-fbc-tenant/v412-cnv-fbc:{{revision}}
   - name: build-platforms
     value:
     - linux/x86_64
   - name: dockerfile
     value: catalog.Dockerfile
   - name: path-context
-    value: v4.15
+    value: v4.12
   pipelineRef:
     name: fbc-pipeline
   taskRunTemplate:
-    serviceAccountName: build-pipeline-v415-cnv-fbc-gnu1
+    serviceAccountName: build-pipeline-v4-12-stage
   workspaces:
   - name: git-auth
     secret:
