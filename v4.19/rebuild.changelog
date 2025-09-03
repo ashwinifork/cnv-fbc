@@ -8,3 +8,4 @@
 17/06/25 - Rebuild for stable release
 03/07/25 - Trigger rebuild to test fips check v2
 25/08/25 - Trigger rebuild to add virt-synchronization-controller to mirror set
+03/09/25 - Rebuild due to fips failure, trying with an updated task
