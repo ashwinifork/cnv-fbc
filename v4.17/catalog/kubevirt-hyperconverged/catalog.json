@@ -22319,7 +22319,7 @@
     "schema": "olm.bundle",
     "name": "kubevirt-hyperconverged-operator.v4.17.29",
     "package": "kubevirt-hyperconverged",
-    "image": "registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:ff5b35d15cfb1c53144fc1bfc1459911cd415b70ff504d5be53c9597423b21b6",
+    "image": "registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:f50132c66d693f42e49729f3592ba1d15cc58cc7eab590dbf6e528bd92c216f6",
     "properties": [
         {
             "type": "olm.gvk",
@@ -22426,7 +22426,7 @@
                     "certified": "true",
                     "console.openshift.io/disable-operand-delete": "true",
                     "containerImage": "registry.redhat.io/container-native-virtualization/hyperconverged-cluster-operator-rhel9@sha256:795c244a37fb1303275064f74d96bb558f4334806e363827958d2b2e6bbe95b6",
-                    "createdAt": "2025-09-10 03:33:39",
+                    "createdAt": "2025-09-10 15:24:56",
                     "description": "Creates and maintains an OpenShift Virtualization Deployment",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
@@ -22626,7 +22626,7 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:ff5b35d15cfb1c53144fc1bfc1459911cd415b70ff504d5be53c9597423b21b6"
+            "image": "registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:f50132c66d693f42e49729f3592ba1d15cc58cc7eab590dbf6e528bd92c216f6"
         },
         {
             "name": "registry.redhat.io/container-native-virtualization/aaq-controller-rhel9:v4.17.29-1",
@@ -22693,8 +22693,8 @@
             "image": "registry.redhat.io/container-native-virtualization/kubevirt-common-instancetypes-rhel9@sha256:5394215c82cda5ac87ef69125c3fcb5264cd02d064c6ec622cdbd265ea782836"
         },
         {
-            "name": "registry.redhat.io/container-native-virtualization/kubevirt-console-plugin-rhel9:v4.17.29-1",
-            "image": "registry.redhat.io/container-native-virtualization/kubevirt-console-plugin-rhel9@sha256:94bdfccd1b82d7c9db4261c06db7bb96f638e4759a5a0f3a14e93722db97eeb7"
+            "name": "registry.redhat.io/container-native-virtualization/kubevirt-console-plugin-rhel9:v4.17.29-2",
+            "image": "registry.redhat.io/container-native-virtualization/kubevirt-console-plugin-rhel9@sha256:4948d46fb67068515e51f527245091fe0eb5c29ae8affd412ccd62fd3cffc501"
         },
         {
             "name": "registry.redhat.io/container-native-virtualization/kubevirt-dpdk-checkup-rhel9:v4.17.29-1",
@@ -22753,8 +22753,8 @@
             "image": "registry.redhat.io/container-native-virtualization/pr-helper-rhel9@sha256:52c711f68bdf39cda0b3ee96ffe8b1ec10cbf02c90a57e762310e389f105c03e"
         },
         {
-            "name": "registry.redhat.io/container-native-virtualization/sidecar-shim-rhel9:v4.17.29-2",
-            "image": "registry.redhat.io/container-native-virtualization/sidecar-shim-rhel9@sha256:41ed18f9654f5b14757a21c11584ca5b7cccffd96cc79caeee7521ce5175096c"
+            "name": "registry.redhat.io/container-native-virtualization/sidecar-shim-rhel9:v4.17.29-3",
+            "image": "registry.redhat.io/container-native-virtualization/sidecar-shim-rhel9@sha256:3fb04d148aa95b0233f150d864bed569559b6dc2586faf5d23a37118fa2f1d48"
         },
         {
             "name": "registry.redhat.io/container-native-virtualization/virt-api-rhel9:v4.17.29-1",
@@ -22829,8 +22829,8 @@
             "image": "registry.redhat.io/container-native-virtualization/vm-network-latency-checkup-rhel9@sha256:2839fc9138b16c3f160de25e9a800ced2dea17d6a7ea9e5fd0d768d004068e55"
         },
         {
-            "name": "registry.redhat.io/container-native-virtualization/wasp-agent-rhel9:v4.17.29-1",
-            "image": "registry.redhat.io/container-native-virtualization/wasp-agent-rhel9@sha256:1b92004547942577a99b5b9b6912c61b7a47b95b238bcdf428c863ee3c2af66e"
+            "name": "registry.redhat.io/container-native-virtualization/wasp-agent-rhel9:v4.17.29-2",
+            "image": "registry.redhat.io/container-native-virtualization/wasp-agent-rhel9@sha256:7ab54eacccdfc250d48255879e4fa82e4cdbb7baa8705f3f558855049f040be0"
         },
         {
             "name": "registry.redhat.io/migration-toolkit-virtualization/mtv-rhv-populator-rhel8:2.6",
