@@ -312,6 +312,12 @@ spec:
     - brew.registry.redhat.io/container-native-virtualization/virt-launcher-rhel9
     source: registry.redhat.io/container-native-virtualization/virt-launcher-rhel9
   - mirrors:
+    - brew.registry.redhat.io/container-native-virtualization/virt-migration-controller-rhel9
+    source: registry.redhat.io/container-native-virtualization/virt-migration-controller-rhel9
+  - mirrors:
+    - brew.registry.redhat.io/container-native-virtualization/virt-migration-operator-rhel9
+    source: registry.redhat.io/container-native-virtualization/virt-migration-operator-rhel9
+  - mirrors:
     - brew.registry.redhat.io/container-native-virtualization/virt-operator
     source: registry.redhat.io/container-native-virtualization/virt-operator
   - mirrors:
