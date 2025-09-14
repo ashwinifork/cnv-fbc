@@ -1,3 +1,3 @@
 channel: stable
-hco-bundle-version: v4.14.15.rhel9-8
-image: registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:4cabfa0118f90b4f9d3ed9f2c3e26df75bb8d8eda6ad60581b3aa2dcb268dca6
+hco-bundle-version: v4.14.15.rhel9-9
+image: registry.redhat.io/container-native-virtualization/hco-bundle-registry-rhel9@sha256:5c8923ec492c1e29158f3588cec0830ffe75b08a2e236b8938ab123a21ea3315
