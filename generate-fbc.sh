@@ -119,7 +119,7 @@ case $cmd in
       "yq")
         touch "${frag}"/graph.yaml
 # shellcheck disable=SC2086,SC2046
-	./opm render $(opm_alpha_params "${frag}") "$from" -o yaml | \
+	opm render $(opm_alpha_params "${frag}") "$from" -o yaml | \
 	    yq "select( .package == \"$package_name\" or .name == \"$package_name\")" | \
       yq 'select(.schema != "olm.bundle" or .name == null or .name | capture("v4\.(?<minor>\d+)\.\d+") | .minor | to_number | . >= '${MIN_MINOR}')' | \
       yq 'select(.schema == "olm.bundle") = {"schema": .schema, "image": .image}' | \
@@ -131,7 +131,7 @@ case $cmd in
       ;;
       "jq")
 # shellcheck disable=SC2086,SC2046
-        ./opm render $(opm_alpha_params "${frag}") "$from" | jq "select( .package == \"$package_name\" or .name == \"$package_name\")" | \
+        opm render $(opm_alpha_params "${frag}") "$from" | jq "select( .package == \"$package_name\" or .name == \"$package_name\")" | \
             jq 'if (.schema == "olm.bundle") then {schema: .schema, image: .image} else (if (.schema == "olm.package") then {schema: .schema, name: .name, defaultChannel: .defaultChannel} else . end) end' | \
             jq -s | \
             jq '{"schema": "olm.template.basic", "name": "kubevirt-hyperconverged", "entries": .}' > "${frag}"/graph.json
@@ -161,7 +161,7 @@ case $cmd in
     echo "rendering catalog for ${frag}..."
     setBrew "${frag}" "$3"
 # shellcheck disable=SC2086,SC2046
-    ./opm alpha render-template basic $(opm_alpha_params "${frag}") "${frag}"/graph.yaml > "${frag}"/catalog/kubevirt-hyperconverged/catalog.json
+    opm alpha render-template basic $(opm_alpha_params "${frag}") "${frag}"/graph.yaml > "${frag}"/catalog/kubevirt-hyperconverged/catalog.json
     unsetBrew "${frag}" "$3"
     echo "rendered catalog for ${frag}."
   ;;
@@ -171,7 +171,7 @@ case $cmd in
       echo "rendering catalog for ${frag}..."
       setBrew "${frag}" "$2"
 # shellcheck disable=SC2086,SC2046
-      ./opm alpha render-template basic $(opm_alpha_params "${frag}") "${frag}"/graph.yaml > "${frag}"/catalog/kubevirt-hyperconverged/catalog.json
+      opm alpha render-template basic $(opm_alpha_params "${frag}") "${frag}"/graph.yaml > "${frag}"/catalog/kubevirt-hyperconverged/catalog.json
       unsetBrew "${frag}" "$2"
       echo "rendered catalog for ${frag}."
     done
