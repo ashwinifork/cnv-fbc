@@ -121,6 +121,9 @@ entries:
       - name: kubevirt-hyperconverged-operator.v4.16.17
         replaces: kubevirt-hyperconverged-operator.v4.16.13
         skipRange: '>=4.15.11 <4.16.0'
+      - name: kubevirt-hyperconverged-operator.v4.16.21
+        replaces: kubevirt-hyperconverged-operator.v4.16.17
+        skipRange: '>=4.15.12 <4.16.0'
     name: stable
     package: kubevirt-hyperconverged
     schema: olm.channel
