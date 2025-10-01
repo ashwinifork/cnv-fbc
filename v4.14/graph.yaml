@@ -34,30 +34,43 @@ entries:
           - kubevirt-hyperconverged-operator.v4.13.6
       - name: kubevirt-hyperconverged-operator.v4.14.2
         replaces: kubevirt-hyperconverged-operator.v4.14.1
+        skipRange: '>=4.14.0 <4.14.2'
       - name: kubevirt-hyperconverged-operator.v4.14.3
         replaces: kubevirt-hyperconverged-operator.v4.14.2
+        skipRange: '>=4.14.0 <4.14.3'
       - name: kubevirt-hyperconverged-operator.v4.14.4
         replaces: kubevirt-hyperconverged-operator.v4.14.3
+        skipRange: '>=4.14.0 <4.14.4'
       - name: kubevirt-hyperconverged-operator.v4.14.5
         replaces: kubevirt-hyperconverged-operator.v4.14.4
+        skipRange: '>=4.14.0 <4.14.5'
       - name: kubevirt-hyperconverged-operator.v4.14.6
         replaces: kubevirt-hyperconverged-operator.v4.14.5
+        skipRange: '>=4.14.0 <4.14.6'
       - name: kubevirt-hyperconverged-operator.v4.14.7
         replaces: kubevirt-hyperconverged-operator.v4.14.6
+        skipRange: '>=4.14.0 <4.14.7'
       - name: kubevirt-hyperconverged-operator.v4.14.8
         replaces: kubevirt-hyperconverged-operator.v4.14.7
+        skipRange: '>=4.14.0 <4.14.8'
       - name: kubevirt-hyperconverged-operator.v4.14.9
         replaces: kubevirt-hyperconverged-operator.v4.14.8
+        skipRange: '>=4.14.0 <4.14.9'
       - name: kubevirt-hyperconverged-operator.v4.14.10
         replaces: kubevirt-hyperconverged-operator.v4.14.9
+        skipRange: '>=4.14.0 <4.14.10'
       - name: kubevirt-hyperconverged-operator.v4.14.11
         replaces: kubevirt-hyperconverged-operator.v4.14.10
+        skipRange: '>=4.14.0 <4.14.11'
       - name: kubevirt-hyperconverged-operator.v4.14.12
         replaces: kubevirt-hyperconverged-operator.v4.14.11
+        skipRange: '>=4.14.0 <4.14.12'
       - name: kubevirt-hyperconverged-operator.v4.14.13
         replaces: kubevirt-hyperconverged-operator.v4.14.12
+        skipRange: '>=4.14.0 <4.14.13'
       - name: kubevirt-hyperconverged-operator.v4.14.14
         replaces: kubevirt-hyperconverged-operator.v4.14.13
+        skipRange: '>=4.14.0 <4.14.14'
     name: stable
     package: kubevirt-hyperconverged
     schema: olm.channel
