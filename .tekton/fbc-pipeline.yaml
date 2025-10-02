@@ -317,20 +317,18 @@ spec:
   - name: validate-fbc
     params:
     - name: IMAGE_URL
-      value: $(tasks.build-image-index.results.IMAGE_URL)
+      value: 'quay.io/redhat-user-workloads/cnv-fbc-tenant/v418-cnv-fbc:0a8b1ca9249061562d4e62ab60a9ea9d7d2cafa0'
     - name: IMAGE_DIGEST
-      value: $(tasks.build-image-index.results.IMAGE_DIGEST)
-    runAfter:
-    - build-image-index
+      value: 'sha256:2bb7c4cb4a3868c1abe1e1aff1eaf2cf6db4246cf2082c033262549d920ecf0e'
     taskRef:
-      params:
-      - name: name
-        value: validate-fbc
-      - name: bundle
-        value: quay.io/konflux-ci/tekton-catalog/task-validate-fbc:0.1@sha256:5ad28ce898a5b4bcaaf3b17d80f30fb377e7229f43219076bb2579c52e241bdb
-      - name: kind
-        value: task
-      resolver: bundles
+        params:
+        - name: url
+          value: https://github.com/ashwinifork/build-definitions.git
+        - name: revision
+          value: validate_fbc_directory_structure
+        - name: pathInRepo
+          value: task/validate-fbc/0.1/validate-fbc.yaml
+        resolver: git
     when:
     - input: $(params.skip-checks)
       operator: in
