@@ -317,9 +317,9 @@ spec:
   - name: validate-fbc
     params:
     - name: IMAGE_URL
-      value: 'quay.io/redhat-user-workloads/cnv-fbc-tenant/v418-cnv-fbc:0a8b1ca9249061562d4e62ab60a9ea9d7d2cafa0'
+      value: $(tasks.build-image-index.results.IMAGE_URL)
     - name: IMAGE_DIGEST
-      value: 'sha256:2bb7c4cb4a3868c1abe1e1aff1eaf2cf6db4246cf2082c033262549d920ecf0e'
+      value: $(tasks.build-image-index.results.IMAGE_DIGEST)
     taskRef:
         params:
         - name: url
