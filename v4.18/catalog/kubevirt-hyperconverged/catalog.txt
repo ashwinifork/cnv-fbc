@@ -1,4 +1,4 @@
-Hello, World!{
+{
     "schema": "olm.package",
     "name": "kubevirt-hyperconverged",
     "defaultChannel": "stable"
