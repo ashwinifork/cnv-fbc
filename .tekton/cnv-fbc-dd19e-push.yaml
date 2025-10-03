@@ -337,17 +337,15 @@ spec:
         value: $(tasks.build-image-index.results.IMAGE_URL)
       - name: IMAGE_DIGEST
         value: $(tasks.build-image-index.results.IMAGE_DIGEST)
-      runAfter:
-      - build-image-index
       taskRef:
-        params:
-        - name: name
-          value: validate-fbc
-        - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-validate-fbc:0.1@sha256:5ad28ce898a5b4bcaaf3b17d80f30fb377e7229f43219076bb2579c52e241bdb
-        - name: kind
-          value: task
-        resolver: bundles
+          params:
+          - name: url
+            value: https://github.com/ashwinifork/build-definitions.git
+          - name: revision
+            value: validate_fbc_directory_structure
+          - name: pathInRepo
+            value: task/validate-fbc/0.1/validate-fbc.yaml
+          resolver: git
       when:
       - input: $(params.skip-checks)
         operator: in
