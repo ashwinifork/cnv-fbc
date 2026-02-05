@@ -321,7 +321,7 @@ spec:
       - name: kind
         value: task
       resolver: bundles
-  - name: validate-fbc
+  - name: validate-fbc-new
     params:
     - name: IMAGE_URL
       value: $(tasks.build-image-index.results.IMAGE_URL)
