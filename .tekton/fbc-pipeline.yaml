@@ -332,7 +332,7 @@ spec:
         - name: url
           value: https://github.com/ashwinifork/build-definitions.git
         - name: revision
-          value: modify-validate-task
+          value: dee7152169a88db250a902ac0fa79b30c2ae3cb7
         - name: pathInRepo
           value: task/validate-fbc/0.1/validate-fbc.yaml
         resolver: git
