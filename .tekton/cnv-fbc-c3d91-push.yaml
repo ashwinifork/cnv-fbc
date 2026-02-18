@@ -389,9 +389,9 @@ spec:
     - name: fbc-fips-check-oci-ta
       params:
       - name: image-digest
-        value: sha256:aefdce2cc6e2e4f7ab8366ad2697bc3abde2fb76d19390a7082f8bc9862c8711
+        value: $(tasks.build-image-index.results.IMAGE_DIGEST)
       - name: image-url
-        value: quay.io/rhoai/odh-vllm-cpu-rhel9
+        value: $(tasks.build-image-index.results.IMAGE_URL)
       - name: SOURCE_ARTIFACT
         value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
       runAfter:
