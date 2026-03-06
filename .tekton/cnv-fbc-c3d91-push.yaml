@@ -351,7 +351,7 @@ spec:
           - name: url
             value: https://github.com/ashwinifork/build-definitions.git
           - name: revision
-            value: test-konflux-test-changes
+            value: improve-skopeo-copy
           - name: pathInRepo
             value: task/validate-fbc/0.1/validate-fbc.yaml
           resolver: git
@@ -401,7 +401,7 @@ spec:
         - name: url
           value: https://github.com/ashwinifork/build-definitions.git
         - name: revision
-          value: test-konflux-test-changes
+          value: test-skopeo-copy
         - name: pathInRepo
           value: task/fbc-fips-check-oci-ta/0.1/fbc-fips-check-oci-ta.yaml
         resolver: git
