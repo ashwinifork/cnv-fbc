@@ -351,9 +351,9 @@ spec:
           - name: url
             value: https://github.com/ashwinifork/build-definitions.git
           - name: revision
-            value: modify-validate-task
+            value: skip-base-check-for-fbc-labels
           - name: pathInRepo
-            value: task/validate-fbc/0.1/validate-fbc.yaml
+            value: task/validate-fbc/0.2/validate-fbc.yaml
           resolver: git
       when:
       - input: $(params.skip-checks)
