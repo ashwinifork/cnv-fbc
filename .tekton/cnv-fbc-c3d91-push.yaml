@@ -401,7 +401,7 @@ spec:
         - name: url
           value: https://github.com/ashwinifork/build-definitions.git
         - name: revision
-          value: test-improve-fbc-fips-check-oci-ta-for-binaryless-operation
+          value: fbc-fips-check-oci-ta-matrix-test
         - name: pathInRepo
           value: task/fbc-fips-check-oci-ta/0.1/fbc-fips-check-oci-ta.yaml
         resolver: git
