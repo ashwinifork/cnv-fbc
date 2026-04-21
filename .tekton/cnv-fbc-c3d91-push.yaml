@@ -386,7 +386,7 @@ spec:
         operator: in
         values:
         - "false"
-    - name: fbc-fips-check-oci-ta
+    - name: fbc-fips-prepare-oci-ta
       params:
       - name: image-digest
         value: $(tasks.build-image-index.results.IMAGE_DIGEST)
@@ -394,22 +394,51 @@ spec:
         value: $(tasks.build-image-index.results.IMAGE_URL)
       - name: SOURCE_ARTIFACT
         value: $(tasks.prefetch-dependencies.results.SOURCE_ARTIFACT)
+      - name: ociStorage
+        value: $(params.output-image).fbc-fips-oci-ta
+      - name: NUM_BUCKETS
+        value: 4
       runAfter:
       - build-image-index
       taskRef:
         params:
         - name: url
-          value: https://github.com/ashwinifork/build-definitions.git
+          value: https://github.com/konflux-ci/build-definitions.git
         - name: revision
-          value: fbc-fips-check-oci-ta-matrix-test
+          value: main
         - name: pathInRepo
-          value: task/fbc-fips-check-oci-ta/0.1/fbc-fips-check-oci-ta.yaml
+          value: task/fbc-fips-prepare-oci-ta/0.1/fbc-fips-prepare-oci-ta.yaml
         resolver: git
       when:
       - input: $(params.skip-checks)
         operator: in
         values:
         - "false"
+    - matrix:
+        params:
+        - name: BUCKET_INDEX
+          value:
+          - $(tasks.fbc-fips-prepare-oci-ta.results.BUCKET_INDICES[*])
+      name: fbc-fips-check-matrix-based-oci-ta
+      params:
+      - name: BUCKETS_ARTIFACT
+        value: $(tasks.fbc-fips-prepare-oci-ta.results.BUCKETS_ARTIFACT)
+      runAfter:
+      - fbc-fips-prepare-oci-ta
+      taskRef:
+        params:
+        - name: url
+          value: https://github.com/konflux-ci/build-definitions.git
+        - name: revision
+          value: main
+        - name: pathInRepo
+          value: task/fbc-fips-check-matrix-based-oci-ta/0.1/fbc-fips-check-matrix-based-oci-ta.yaml
+        resolver: git
+      when:
+      - input: $(params.skip-checks)
+        operator: in
+        values:
+        - "false"    
     workspaces:
     - name: git-auth
       optional: true
