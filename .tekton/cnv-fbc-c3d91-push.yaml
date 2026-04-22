@@ -403,9 +403,9 @@ spec:
       taskRef:
         params:
         - name: url
-          value: https://github.com/konflux-ci/build-definitions.git
+          value: https://github.com/ashwinifork/build-definitions.git
         - name: revision
-          value: main
+          value: binaryless-fbc-fips-matrix-check
         - name: pathInRepo
           value: task/fbc-fips-prepare-oci-ta/0.1/fbc-fips-prepare-oci-ta.yaml
         resolver: git
