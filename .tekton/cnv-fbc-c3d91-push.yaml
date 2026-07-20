@@ -428,7 +428,7 @@ spec:
       taskRef:
         params:
         - name: url
-          value: https://github.com/konflux-ci/build-definitions.git
+          value: https://github.com/konflux-ci/konflux-operator-tasks.git
         - name: revision
           value: main
         - name: pathInRepo
